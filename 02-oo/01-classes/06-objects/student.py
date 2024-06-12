@@ -1,10 +1,14 @@
 def main():
     # write your code here
+    brawler_aragorn = Brawler(4, 4, "Aragorn")
+    brawler_gimli = Brawler(2, 7, "Gimli")
+    brawler_legolas = Brawler(7, 7, "Legolas")
+    brawler_frodo = Brawler(3, 2, "Frodo")
 
+    fight(brawler_aragorn, brawler_gimli)
+    fight(brawler_legolas, brawler_frodo)
 
 # don't touch below this line
-
-
 class Brawler:
     def __init__(self, speed, strength, name):
         self.speed = speed
