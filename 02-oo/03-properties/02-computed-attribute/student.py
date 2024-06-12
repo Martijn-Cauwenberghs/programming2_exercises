@@ -1,64 +1,19 @@
 # Write your code here
-from abc import ABC, abstractmethod
+class BMICalculator:
+    def __init__(self, weight_in_kg, height_in_m):
+        self.weight_in_kg = weight_in_kg
+        self.height_in_m = height_in_m
+    
+    @property
+    def bmi(self):
+        return self.weight_in_kg / self.height_in_m**2
 
-class A(ABC):
-    def a(self):
-        self.b()
-
-    def e(self):
-        self.c()
-
-    @abstractmethod
-    def c(self):
-        pass
-
-    @abstractmethod
-    def b(self):
-        pass
-
-
-class B(A):
-    def b(self):
-        self.a()
-
-    def c(self):
-        self.e()
-
-
-class C(B):
-    def f(self):
-        pass
-
-
-class D(A):
-    def b(self):
-        self.f()
-
-    @abstractmethod
-    def f(self):
-        pass
-
-
-class E(D):
-    def c(self):
-        self.a()
-
-    def f(self):
-        self.e()
-
-    def g(self):
-        self.f()
-
-
-class F(ABC):
-    def a(self):
-        self.b()
-        self.f()
-
-    @abstractmethod
-    def b(self):
-        pass
-
-    @abstractmethod
-    def f(self):
-        pass
+    @property
+    def category(self):
+        bmi = self.bmi
+        if bmi < 18.5:
+            return "underweight"
+        elif bmi < 25:
+            return "normal"
+        else:
+            return "overweight"

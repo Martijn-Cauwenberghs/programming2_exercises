@@ -77,22 +77,22 @@ A storage device has two operations:
 RuntimeError
 ```
 
-* Define a class `StorageDevice`.
-* Define its constructor.
-  * It should have two parameters: `block_count` and `block_size`.
-  * In a *private* field `available_blocks`, it stores a set containing the numbers `0` to `block_count` (exclusive).
-  * In a *private* field `used_blocks`, it stores an empty set.
-  * It stores the block size in a *private* field `block_size`.
-* Add a public property `available_block_count` which returns the number of available blocks.
-* Add a public property `used_block_count` which returns the number of used blocks.
-* Add a public property `total_block_count` which returns the total number of blocks (both available and used).
-* Add a public property `block_size` which returns the size of the blocks.
-* Define a public method `allocate`.
-  * It has a parameter  `block_count` (an integer).
-  * The method takes `block_count` available blocks from `available_blocks` and returns them as a list.
+* #Define a class `StorageDevice`. 
+* #Define its constructor. 
+  * #It should have two parameters: `block_count` and `block_size`. 
+  * #In a *private* field `available_blocks`, it stores a set containing the numbers `0` to `block_count` (exclusive). 
+  * #In a *private* field `used_blocks`, it stores an empty set. 
+  * #It stores the block size in a *private* field `block_size`. 
+* #Add a public property `available_block_count` which returns the number of available blocks. 
+* #Add a public property `used_block_count` which returns the number of used blocks. 
+* #Add a public property `total_block_count` which returns the total number of blocks (both available and used). 
+* #Add a public property `block_size` which returns the size of the blocks.
+* #Define a public method `allocate`.
+  * #It has a parameter  `block_count` (an integer).
+  * #The method takes `block_count` available blocks from `available_blocks` and returns them as a list.
         It also moves these blocks from `available_blocks` to `used_blocks`.
         Note: in order to take N blocks from `available_blocks`, it might be helpful to first convert it into a list.
-  * If there are insufficient available blocks left, a `RuntimeError` is raised.
+  * #If there are insufficient available blocks left, a `RuntimeError` is raised.
 * Define a public method `free`.
   * It has a parameter `blocks` (a list of block indices).
   * Only used blocks can be freed.
